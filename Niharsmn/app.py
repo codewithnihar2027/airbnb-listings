@@ -11,8 +11,8 @@ import joblib
 # ----- Load model and feature metadata -----
 @st.cache_data
 def load_model():
-    model = joblib.load("model.pkl")           #  Load using joblib
-    feature_list = joblib.load("feature_list.pkl")
+    model = joblib.load(os.path.join("Niharsmn", "model.pkl"))       
+    feature_list = joblib.load(os.path.join("Niharsmn", "feature_list.pkl"))
     return model, feature_list
 
 # Load model + feature list once
@@ -259,5 +259,6 @@ elif page == "Predict Price":
 
     except Exception as e:
         st.error(f"Prediction failed: {e}")
+
 
 
