@@ -1,4 +1,6 @@
-# app.py
+import os
+os.environ["PORT"] = os.getenv("PORT", "10000")
+
 import streamlit as st
 import pandas as pd
 import seaborn as sns
@@ -257,3 +259,4 @@ elif page == "Predict Price":
 
     except Exception as e:
         st.error(f"Prediction failed: {e}")
+
