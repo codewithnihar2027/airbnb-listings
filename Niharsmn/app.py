@@ -11,6 +11,9 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import joblib
 
+# Streamlit page config
+st.set_page_config(page_title="Airbnb Listings & Price Prediction", layout="wide")
+
 
 # ----- Load model and feature metadata -----
 @st.cache_data
@@ -56,9 +59,6 @@ if not os.path.exists(df_path):
 
 df = pd.read_csv(df_path)
 
-
-# Streamlit page config
-st.set_page_config(page_title="Airbnb Listings & Price Prediction", layout="wide")
 
 # Sidebar navigation
 st.sidebar.title("🏠 Airbnb Project")
@@ -290,3 +290,4 @@ elif page == "Predict Price":
 
     except Exception as e:
         st.error(f"Prediction failed: {e}")
+
